@@ -18,9 +18,9 @@ const ChatHome = () => {
 			// Sub på ReceiveMessage för att lägga till nya meddelanden i state
 			connection.on("ReceiveMessage", (user, message, role) => {
 				setUserMessages(prevMessages => {
-                    const newMessages = [...prevMessages, { user, message, role }];
-                    return newMessages.slice(-4); // Keep only the last 10 messages
-                });
+					const newMessages = [...prevMessages, { user, message, role }];
+					return newMessages.slice(-4); // Keep only the last 10 messages
+				});
 			});
 
 			// Hanterar vad som händer vid stängd connection
@@ -120,13 +120,15 @@ const ChatHome = () => {
 						<div className="login-container">
 							<h2 className="text-xl font-bold mb-4 text-center">Join Chat Room</h2>
 							<input type="text" placeholder="Enter your name" value={userName} onChange={(e) => setUserName(e.target.value)} />
-
+							<br />
+							<br />
 							{/* Låter användaren välja chatroom med en dropdown-meny */}
 							<select value={chatRoom} onChange={(e) => setChatRoom(e.target.value)}>
 								<option value="General">General</option>
 								<option value="Announcements">Announcements</option>
 							</select>
-
+							<br />
+							<br />
 							{/* Låter användaren välja roll med radioknappar */}
 							<div className="mb-4">
 								<input type="radio" name="role" value="Student" id="student" checked={chatRole === "Student"} onChange={handleRoleChange} />
@@ -134,7 +136,7 @@ const ChatHome = () => {
 								<input type="radio" name="role" value="Teacher" id="teacher" checked={chatRole === "Teacher"} onChange={handleRoleChange} />
 								<label htmlFor="teacher" className="ml-2">Teacher</label>
 							</div>
-
+							<br />
 							{/* Knapp för att joina ett chatroom */}
 							<button onClick={() => joinChatRoom(userName, chatRoom, chatRole)}>Join Chat Room</button>
 						</div>
