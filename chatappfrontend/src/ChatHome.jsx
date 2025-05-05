@@ -136,7 +136,7 @@ const ChatHome = () => {
 								<input type="radio" name="role" value="Teacher" id="teacher" checked={chatRole === "Teacher"} onChange={handleRoleChange} />
 								<label htmlFor="teacher" className="ml-2">Teacher</label>
 							</div>
-							<br />
+							<br />	
 							{/* Knapp för att joina ett chatroom */}
 							<button onClick={() => joinChatRoom(userName, chatRoom, chatRole)}>Join Chat Room</button>
 						</div>

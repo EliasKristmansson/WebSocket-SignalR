@@ -22,7 +22,6 @@ const ChatBox = ({ sendMessage, chatRoom, chatRole, quitChatRoom }) => {
 				<textarea
 					className="w-full p-2 bg-white rounded-2xl resize-none"
 					rows="1"
-					value={message.slice(-4)}
 					onChange={(e) => setMessage(e.target.value)}
 					placeholder="Type a message..."
 					disabled={isDisabled}
